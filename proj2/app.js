@@ -118,6 +118,7 @@ var greet = function () {
 };
 greet();
 (function (user) { console.log(user + ' says Hello to Self-invoked Arrow Function!'); })('Will');
+(function (user) { console.log(user + ' says Hello to Self-invoked Arrow Function!'); })('Will Tj');
 var greetFriend = function (friend) { return console.log('Say Hello to ' + friend); };
 greetFriend('Chang');
 var countdown = function (start) {

@@ -6,7 +6,7 @@ var double = function(value) {
 };
 console.log(double(10));
 */
-var double = (value: number) => {
+var double = (value: number):number => {
     return value * 2;
 };
 console.log(double(10));

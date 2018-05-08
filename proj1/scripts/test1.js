@@ -1,3 +1,4 @@
+"use strict";
 var Greet = /** @class */ (function () {
     function Greet(name) {
         this.name = name;

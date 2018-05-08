@@ -1,7 +1,7 @@
 class Greet {
     name: string;
 
-    constructor(name) {
+    constructor(name: string) {
         this.name = name;
     }
 

@@ -159,6 +159,8 @@ const greet = () => {
 greet();
 
 ((user: string)=>{ console.log(user + ' says Hello to Self-invoked Arrow Function!') })('Will');
+((user: string): void =>{ console.log(user + ' says Hello to Self-invoked Arrow Function!') })('Will Tj');
+
 
 const greetFriend = (friend: string) => console.log('Say Hello to ' + friend);
 greetFriend('Chang');
