@@ -86,3 +86,71 @@ var Helpers = /** @class */ (function () {
 }());
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircumference(10));
+/* Abstract Classes */
+console.log('Abstract Classes...');
+var Project = /** @class */ (function () {
+    function Project() {
+        this.projectName = 'Default';
+    }
+    Project.prototype.calcBudget = function () {
+        return this.budget * 2;
+    };
+    return Project;
+}());
+var ITProject = /** @class */ (function (_super) {
+    __extends(ITProject, _super);
+    function ITProject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ITProject.prototype.changeName = function (name) {
+        this.projectName = name;
+    };
+    return ITProject;
+}(Project));
+var newProject = new ITProject();
+console.log(newProject);
+newProject.changeName('Super IT Project');
+console.log(newProject);
+newProject.budget = 1000;
+console.log(newProject);
+console.log(newProject.calcBudget());
+/* Private Constructors & Singletons */
+console.log('Private Constructors & Singletons...');
+var OnlyOne = /** @class */ (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    ; //this equals to public name: string; plus this.name = name;
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The Only One Instance/ Singleton');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+//let thisiswrong = new OnlyOne('The Only One Instance'); //this is wrong. Compilation will cause error
+var thisisright = OnlyOne.getInstance();
+console.log(thisisright);
+thisisright.name = 'change the name via accessing name property because its modifier is public';
+console.log(thisisright);
+/* readonly property */
+console.log('readonly property...');
+var AnotherOnlyOne = /** @class */ (function () {
+    function AnotherOnlyOne(name) {
+        this.name = name;
+    }
+    ;
+    AnotherOnlyOne.getInstance = function () {
+        if (!AnotherOnlyOne.instance) {
+            AnotherOnlyOne.instance = new AnotherOnlyOne('The Only One Instance/ Singleton');
+        }
+        return AnotherOnlyOne.instance;
+    };
+    return AnotherOnlyOne;
+}());
+//let anotherthisiswrong = new AnotherOnlyOne('The Only One Instance'); //this is wrong. Compilation will cause error
+var anotherthisisright = AnotherOnlyOne.getInstance();
+console.log(anotherthisisright);
+//anotherthisisright.name = 'change the name via accessing name property because its modifier is public'; //reassign the name property is impossible because now then name property is readonly
+console.log(anotherthisisright);
