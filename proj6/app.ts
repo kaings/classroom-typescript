@@ -13,8 +13,6 @@ console.log('Rectangle', MyMath.calcRectangle(2,10));
 console.log('PI outside Mymath', PI);
 
 
-
-
 import Rectangle2 = MyMath.Rectangle; //create an alias also works
 
 console.log('Circle2', MyMath.Circle.calcCircumference2(50));

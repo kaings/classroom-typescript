@@ -3,7 +3,7 @@ var MyMath;
 (function (MyMath) {
     var Circle;
     (function (Circle) {
-        var PI = 3.14;
+        //const PI = 3.14;
         function calcCircumference2(diameter) {
             return PI * diameter;
         }
